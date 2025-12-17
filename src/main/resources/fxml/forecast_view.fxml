@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="533.0" prefWidth="277.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.artynikon.weather.controllers.ForecastViewController">
+    <children>
+        <ImageView fx:id="backgroundImageView" fitHeight="308.0" fitWidth="277.0" pickOnBounds="true" />
+        <Text fx:id="city" fill="WHITE" layoutX="-4.0" layoutY="40.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-stroke-width: 10;" text="Загрузка..." textAlignment="CENTER" wrappingWidth="277.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="21.0" />
+            </font>
+        </Text>
+        <Text fx:id="currentFullDatePlusTime" fill="WHITE" fontSmoothingType="LCD" layoutX="-4.0" layoutY="66.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="277.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="13.0" />
+            </font>
+        </Text>
+        <Text fx:id="currentTemp" fill="WHITE" layoutX="-1.0" layoutY="103.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="271.0">
+            <font>
+                <Font name="Leelawadee UI Semilight" size="30.0" />
+            </font>
+        </Text>
+        <Text disable="true" fill="WHITE" layoutX="158.0" layoutY="89.0" opacity="0.8" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="°C" wrappingWidth="22.3">
+            <font>
+                <Font name="Leelawadee UI Semilight" size="10.0" />
+            </font>
+        </Text>
+        <Text fx:id="feels_like" fill="WHITE" layoutX="-1.0" layoutY="125.0" opacity="0.6" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="277.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="16.0" />
+            </font>
+        </Text>
+        <Text fx:id="conditionDescriptionText" fill="WHITE" layoutY="148.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="277.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="12.0" />
+            </font>
+        </Text>
+        <Text fx:id="wind" fill="WHITE" layoutY="168.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" wrappingWidth="277.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="12.0" />
+            </font>
+        </Text>
+
+        <Button layoutY="6.0" mnemonicParsing="false" onAction="#backToChooseCity" prefHeight="25.0" prefWidth="22.0" style="-fx-background-radius: 7; -fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 25; -fx-cursor: hand;" text="❮" textFill="WHITE">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+
+        <Rectangle fill="#0f3f54" height="239.0" layoutY="308.0" smooth="false" stroke="#877f7f" strokeType="INSIDE" strokeWidth="0.0" width="277.0" />
+        <Button fx:id="hourlyButton" layoutX="35.0" layoutY="312.0" mnemonicParsing="false" onAction="#updateWeatherDownDisplayForHours" prefHeight="25.0" prefWidth="110.0" style="-fx-background-radius: 7; -fx-background-color: #34515e;" text="По часам" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Button>
+        <Button fx:id="dailyButton" layoutX="134.0" layoutY="312.0" mnemonicParsing="false" onAction="#showWeatherForDays" prefHeight="25.0" prefWidth="110.0" style="-fx-background-radius: 7; -fx-background-color: #667880;" text="По дням">
+            <font>
+                <Font name="System Bold" size="11.0" />
+            </font>
+        </Button>
+        <Text fx:id="currentMonth" fill="WHITE" layoutX="10.0" layoutY="354.0" opacity="0.41" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="110.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="12.0" />
+            </font>
+        </Text>
+
+        <HBox fx:id="temperatureContainer" alignment="CENTER" layoutX="6.0" layoutY="361.0" prefHeight="130.0" prefWidth="270.0" spacing="5.0" />
+
+        <HBox fx:id="windContainer" alignment="CENTER_LEFT" layoutX="9.0" layoutY="493.0" prefHeight="50.0" prefWidth="268.0" spacing="5.0" />
+
+        <Text fill="WHITE" layoutX="8.0" layoutY="486.0" opacity="0.6" strokeType="OUTSIDE" strokeWidth="0.0" text="Ветер, м/c" wrappingWidth="69.7">
+            <font>
+                <Font name="MS Reference Sans Serif" size="12.0" />
+            </font>
+        </Text>
+
+        <Line endX="180.0" layoutX="96.0" layoutY="483.0" opacity="0.6" startX="-19.0" stroke="#616575" />
+
+        <Button fx:id="prevHourButton" layoutX="110.0" layoutY="451.0" mnemonicParsing="false" onAction="#showPrevFiveHours" prefHeight="25.0" prefWidth="22.0" style="-fx-background-color: #667880; -fx-background-radius: 7; -fx-border-width: 0.1; -fx-border-radius: 7;" text="❮" />
+        <Button fx:id="nextHourButton" layoutX="135.0" layoutY="451.0" mnemonicParsing="false" onAction="#showNextFiveHours" prefHeight="25.0" prefWidth="22.0" style="-fx-background-color: #667880; -fx-background-radius: 7; -fx-border-width: 0.1; -fx-border-radius: 7;" text="❯" />
+
+    </children>
+</AnchorPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="cardBox" alignment="TOP_CENTER" prefHeight="180.0" prefWidth="50.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.artynikon.weather.controllers.WeatherDayCardController">
+
+    <Text fx:id="dateText" fill="WHITE" opacity="0.75" text="Пн. 23" textAlignment="CENTER" wrappingWidth="50.0">
+        <font>
+            <Font name="MS Reference Sans Serif" size="12.0" />
+        </font>
+    </Text>
+
+    <ImageView fx:id="weatherIcon" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+
+    <VBox alignment="CENTER" maxWidth="40.0" prefWidth="40.0" spacing="0.0" translateX="-12.0" VBox.vgrow="NEVER">
+        <children>
+            <Text fx:id="maxTempText" fill="WHITE" text="+1" textAlignment="RIGHT" wrappingWidth="40.0">
+                <font>
+                    <Font name="MS Reference Sans Serif" size="13.0" />
+                </font>
+            </Text>
+
+            <Text fx:id="minTempText" fill="WHITE" text="-1" textAlignment="RIGHT" wrappingWidth="40.0">
+                <font>
+                    <Font name="MS Reference Sans Serif" size="13.0" />
+                </font>
+            </Text>
+        </children>
+    </VBox>
+
+    <VBox alignment="CENTER" maxWidth="40.0">
+        <Text fx:id="windSpeedText" fill="WHITE" opacity="0.9" text="7-16" textAlignment="CENTER" wrappingWidth="40.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="12.0" />
+            </font>
+        </Text>
+
+        <Text fx:id="windDirText" fill="WHITE" opacity="0.6" text="ЮЗ" textAlignment="CENTER" wrappingWidth="40.0">
+            <font>
+                <Font name="MS Reference Sans Serif" size="12.0" />
+            </font>
+        </Text>
+    </VBox>
+
+</VBox>
